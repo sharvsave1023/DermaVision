@@ -8,44 +8,45 @@ import numpy as np
 import io
 
 app = FastAPI()
-
-# Allow CORS for frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this to your frontend's URL in production
+    allow_origins=["*"],  #TO DO: REPLACE WITH DOMAINS
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Load the PyTorch model
-model = torch.load('path_to_your_model.pth')
-model.eval()  # Set the model to evaluation mode
+# TO DO: LOAD IN PYTORCH MODEL
+model = torch.load('.pth')
+model.eval()
 
-# Define the image transformations
 preprocess = transforms.Compose([
-    transforms.Resize((224, 224)),  # Adjust size as per model's requirement
-    transforms.ToTensor(),  # Convert the image to a tensor
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),  # Normalize the image
+    transforms.Resize((600, 450)),  # Adjust size as per model's requirement
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
 
 def preprocess_image(image: Image.Image) -> torch.Tensor:
-    image = preprocess(image)  # Apply the transformations
-    return image.unsqueeze(0)  # Add batch dimension
+    image = preprocess(image)
+    return image.unsqueeze(0)
 
 def make_prediction(processed_image: torch.Tensor, age: int, sex: str, localization: str) -> dict:
-    # Here you would need to modify the model input to include age, sex, and localization
-    # This is a placeholder for how you might combine these inputs
-    # For example, you could concatenate them with the image data or use a different model architecture
+    # Convert sex and localization to numerical values (e.g., using one-hot encoding)
+    sex_encoded = 1 if sex == 'male' else 0  # Example encoding
+    localization_encoded = ...  # Implement encoding for localization
+
+    # Combine the image tensor with the additional inputs
+    combined_input = torch.cat((processed_image, torch.tensor([[age, sex_encoded, localization_encoded]])), dim=1)
+
     with torch.no_grad():  # Disable gradient calculation
-        predictions = model(processed_image)  # Forward pass
+        predictions = model(combined_input)  # Forward pass
     predicted_class = torch.argmax(predictions, dim=1).item()  # Get the predicted class
     predicted_probabilities = predictions.softmax(dim=1).tolist()[0]  # Get the probabilities for all classes
     return {
         "predicted_class": predicted_class,
         "predicted_probabilities": predicted_probabilities
     }
-
+    
 @app.post("/predict/")
 async def predict(file: UploadFile = File(...), 
                   age: int = Form(...), 
