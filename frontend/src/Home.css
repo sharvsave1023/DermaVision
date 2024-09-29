@@ -1,0 +1,14 @@
+.home-container {
+  text-align: left; /* Align text to the left */
+  padding: 20px; /* Add some padding */
+}
+
+h2 {
+  font-size: 2em; /* Adjust the size of the heading */
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+p {
+  font-size: 1.2em; /* Adjust the size of the paragraph text */
+  margin-bottom: 20px; /* Space below the paragraph */
+}

@@ -1,4 +1,7 @@
 .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the App takes at least the full height of the viewport */
   text-align: center;
 }
 
@@ -17,19 +20,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #282c34;
+  background-color: #2e0a4d;
   padding: 20px;
   color: white;
 }
 
 .App-title {
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .nav-links {
   list-style-type: none;
   padding: 0;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .nav-links li {
@@ -38,15 +41,17 @@
 }
 
 .nav-links a {
-  color: #61dafb; /* Link color */
-  text-decoration: none; /* Remove underline */
-  padding: 5px 10px; /* Add padding */
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth transition */
+  color: #b080b0;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Keep transition for background color */
 }
 
-.nav-links a:hover {
-  background-color: rgba(97, 218, 251, 0.2); /* Light background on hover */
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: white; /* Change background color to white on hover and focus */
+  color: #b080b0; /* Optional: keep text color for contrast */
 }
 
 .App-main {
@@ -55,25 +60,25 @@
   padding: 20px;
 }
 
-.instructions {
-  flex: 1;
-  text-align: left;
-  padding-right: 20px;
+.instructions-section {
+  flex: 1; /* Takes up available space */
+  margin-right: 20px; /* Space between sections */
 }
 
-.upload-section {
-  flex: 1;
-  text-align: left;
+.form-section {
+  flex: 1; /* Takes up available space */
 }
+
+/* Removed unused classes: .instructions, .upload-section, .drop-area, .file-label, .age-input, .sex-select, .localization-select, .button-container */
 
 .App-footer {
-  background-color: #282c34;
+  background-color: #2e0a4d;
   padding: 10px;
   color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #d8bfd8;
 }
 
 @keyframes App-logo-spin {
@@ -83,4 +88,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.submit-button {
+  background-color: #4b1f6d; /* Dark purple background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for better size */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.submit-button:hover {
+  background-color: #6a4b8a; /* Lighter purple on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.submit-button:focus {
+  outline: none; /* Remove outline on focus */
+  box-shadow: 0 0 5px rgba(75, 31, 109, 0.5); /* Add shadow on focus */
+}
+
+main {
+  flex: 1; /* Allow the main content to grow and take available space */
 }
