@@ -1,0 +1,50 @@
+.disease-title {
+  display: block; /* Make the title a block element */
+  margin-left: 10px; /* Add margin to the left */
+  text-align: left; /* Align text to the left */
+  font-size: 1.2em; /* Increase font size */
+  color: #2c3e50; /* Darker color for better readability */
+  margin-bottom: 10px; /* Space below the title */
+  list-style-type: none; /* Remove bullet points */
+}
+
+.bullet-points {
+  list-style-type: disc; /* Use bullet points */
+  padding-left: 10px; /* Indent the bullet points */
+  text-align: left; /* Align text to the left */
+  margin-bottom: 20px; /* Space below the list */
+}
+
+.bullet-points li {
+  margin-bottom: 10px; /* Space between list items */
+  line-height: 1.6; /* Improve readability */
+}
+
+.about-container {
+  padding: 10px; /* Reduce padding around the container */
+  max-width: 1200px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  font-family: Arial, sans-serif; /* Set a clean font */
+  color: #333; /* Set a default text color */
+  width: 90%; /* Make the container span 90% of the width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.about-container h2 {
+  font-size: 2em; /* Increase the size of the main heading */
+  margin-bottom: 20px; /* Space below the heading */
+  color: #2c3e50; /* Darker color for the heading */
+}
+
+.about-container h3 {
+  font-size: 1.75em; /* Increase the size of subheadings */
+  margin-bottom: 15px; /* Space below the subheading */
+  color: #34495e; /* Slightly lighter color for subheadings */
+}
+
+.about-container p {
+  font-size: 1.2em; /* Increase the size of the paragraph text */
+  margin-bottom: 20px; /* Space below the paragraph */
+  line-height: 1.6; /* Improve readability */
+}
+

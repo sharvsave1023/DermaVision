@@ -21,7 +21,7 @@ model = torch.load('.pth')
 model.eval()
 
 preprocess = transforms.Compose([
-    transforms.Resize((600, 450)),  # Adjust size as per model's requirement
+    transforms.CenterCrop((300, 225)),  # Crop the image to a 4:3 aspect ratio
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])

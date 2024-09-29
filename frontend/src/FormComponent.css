@@ -10,6 +10,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 40vh; /* Decreased minimum height for the form container */
 }
 
 .home-layout {
@@ -58,8 +59,24 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 20px; /* Add margin to move the button down */
 }
 
 .form-button:hover {
     background-color: #0056b3;
+}
+
+.dropzone {
+    border: 2px dashed #007bff;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%; /* Make the dropzone take full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.dropzone:hover {
+    background-color: #f0f8ff;
 }

@@ -69,7 +69,7 @@ function App() {
           </Routes>
         </main>
         <footer className="App-footer">
-          <p>Footer information here.</p>
+          <p>Developed by Sharv Save, Manish Kota, Ashank Awasthy, Ahmed Zeeshan</p>
         </footer>
       </div>
     </Router>
