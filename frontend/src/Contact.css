@@ -1,41 +1,40 @@
 .team-member {
     display: flex;
     align-items: center;
-    margin: 20px 0; /* Space between team members */
-    text-align: center; /* Center text under headshot */
-  }
+    margin: 20px 0;
+    text-align: center;
+}
   
-  .team-headshot {
-    width: 150px; /* Adjust size as needed */
-    height: 150px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it circular */
-    margin-right: 20px; /* Space between image and text */
-    margin-bottom: 10px; /* Space between image and text */
-  }
+.team-headshot {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
   
-  .team-grid {
+.team-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 40px; /* Increase space between grid items */
-    margin: 20px auto; /* Center the grid and add space above and below */
-    max-width: 800px; /* Set a maximum width for the grid */
-    justify-content: center; /* Center the grid items */
-  }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    justify-content: center;
+}
   
-  .member-info {
-    text-align: center; /* Center the text under the headshot */
-    margin-top: 10px; /* Space above the member info */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-  }
+.member-info {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
-  .member-name {
-    font-weight: bold; /* Make the name bold */
-  }
+.member-name {
+    font-weight: bold;
+}
   
-  .role {
-    font-style: italic; /* Optional: make the role italic */
-    margin-top: 5px; /* Space above the role */
-  }
-  
+.role {
+    font-style: italic;
+    margin-top: 5px;
+}

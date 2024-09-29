@@ -30,32 +30,22 @@ def preprocess_image(image: Image.Image) -> torch.Tensor:
     image = preprocess(image)
     return image.unsqueeze(0)
 
-def make_prediction(processed_image: torch.Tensor, age: int, sex: str, localization: str) -> dict:
-    # Convert sex and localization to numerical values (e.g., using one-hot encoding)
-    sex_encoded = 1 if sex == 'male' else 0  # Example encoding
-    localization_encoded = ...  # Implement encoding for localization
-
-    # Combine the image tensor with the additional inputs
-    combined_input = torch.cat((processed_image, torch.tensor([[age, sex_encoded, localization_encoded]])), dim=1)
-
+def make_prediction(processed_image: torch.Tensor) -> dict:
     with torch.no_grad():  # Disable gradient calculation
-        predictions = model(combined_input)  # Forward pass
+        predictions = model(processed_image)  # Forward pass
     predicted_class = torch.argmax(predictions, dim=1).item()  # Get the predicted class
     predicted_probabilities = predictions.softmax(dim=1).tolist()[0]  # Get the probabilities for all classes
     return {
         "predicted_class": predicted_class,
         "predicted_probabilities": predicted_probabilities
     }
-    
+
 @app.post("/predict/")
-async def predict(file: UploadFile = File(...), 
-                  age: int = Form(...), 
-                  sex: str = Form(...), 
-                  localization: str = Form(...)):
+async def predict(file: UploadFile = File(...)):
     image_data = await file.read()
     image = Image.open(io.BytesIO(image_data))
 
     processed_image = preprocess_image(image)
-    prediction_result = make_prediction(processed_image, age, sex, localization)
+    prediction_result = make_prediction(processed_image)
 
     return JSONResponse(content=prediction_result)

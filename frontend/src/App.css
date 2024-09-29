@@ -1,7 +1,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the App takes at least the full height of the viewport */
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -45,31 +45,30 @@
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
-  transition: background-color 0.3s; /* Keep transition for background color */
+  transition: background-color 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: white; /* Change background color to white on hover and focus */
-  color: #b080b0; /* Optional: keep text color for contrast */
+  background-color: white;
+  color: #b080b0;
 }
 
 .App-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
+  flex: 1;
 }
 
 .instructions-section {
-  flex: 1; /* Takes up available space */
-  margin-right: 20px; /* Space between sections */
+  flex: 1;
+  margin-right: 20px;
 }
 
 .form-section {
-  flex: 1; /* Takes up available space */
+  flex: 1;
 }
-
-/* Removed unused classes: .instructions, .upload-section, .drop-area, .file-label, .age-input, .sex-select, .localization-select, .button-container */
 
 .App-footer {
   background-color: #2e0a4d;
@@ -91,26 +90,26 @@
 }
 
 .submit-button {
-  background-color: #4b1f6d; /* Dark purple background */
-  color: white; /* White text */
-  padding: 10px 20px; /* Padding for better size */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 16px; /* Font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+  background-color: #4b1f6d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button:hover {
-  background-color: #6a4b8a; /* Lighter purple on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #6a4b8a;
+  transform: scale(1.05);
 }
 
 .submit-button:focus {
-  outline: none; /* Remove outline on focus */
-  box-shadow: 0 0 5px rgba(75, 31, 109, 0.5); /* Add shadow on focus */
+  outline: none;
+  box-shadow: 0 0 5px rgba(75, 31, 109, 0.5);
 }
 
 main {
-  flex: 1; /* Allow the main content to grow and take available space */
+  flex: 1;
 }

@@ -9,9 +9,6 @@ import ResultsComponent from './ResultsComponent';
 
 function App() {
   const [file, setFile] = useState(null);
-  const [age, setAge] = useState('');
-  const [sex, setSex] = useState('');
-  const [localization, setLocalization] = useState('');
   const [prediction, setPrediction] = useState(null);
 
   const handleFileChange = (event) => {
@@ -22,11 +19,8 @@ function App() {
     event.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('age', age);
-    formData.append('sex', sex);
-    formData.append('localization', localization);
 
-    const response = await fetch('http://localhost:8000/predict/', {
+    const response = await fetch('http://127.0.0.1:5000/predict/', {
       method: 'POST',
       body: formData,
     });
@@ -37,9 +31,6 @@ function App() {
 
   const resetForm = () => {
     setFile(null);
-    setAge('');
-    setSex('');
-    setLocalization('');
     setPrediction(null);
   };
 
@@ -67,12 +58,6 @@ function App() {
               <Home 
                 file={file} 
                 setFile={setFile} 
-                age={age} 
-                setAge={setAge} 
-                sex={sex} 
-                setSex={setSex} 
-                localization={localization} 
-                setLocalization={setLocalization} 
                 handleSubmit={handleSubmit} 
               />
             } />

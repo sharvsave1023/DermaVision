@@ -2,7 +2,7 @@
 
 .form-container {
     display: flex;
-    flex-direction: column; /* Stack the form vertically */
+    flex-direction: column;
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
@@ -10,43 +10,42 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    min-height: 40vh; /* Decreased minimum height for the form container */
 }
 
 .home-layout {
     display: flex;
-    justify-content: center; /* Center the content */
-    align-items: flex-start; /* Align items to the top */
-    padding: 20px; /* Add some padding */
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 .welcome-message {
-    flex: 1; /* Take available space */
-    text-align: left; /* Align text to the left */
-    margin-left: 100px; /* Add left margin for spacing */
+    flex: 1;
+    text-align: left;
+    margin-left: 100px;
 }
 
 .form-section {
-    flex: 1; /* Allow the form section to take available space */
-    max-width: 600px; /* Set a maximum width for the form */
-    margin: 0 100px; /* Increase right margin to 40px */
-    padding: 20px; /* Add padding for better spacing */
+    flex: 1;
+    max-width: 600px;
+    margin: 0 100px;
+    padding: 20px;
 }
 
 .input-group {
-    display: flex; /* Use flexbox for input groups */
-    align-items: center; /* Center items vertically */
-    margin: 10px 0; /* Space between input groups */
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .input-group label {
-    margin-right: 10px; /* Space between label and input */
-    flex: 0 0 100px; /* Fixed width for labels */
-    text-align: left; /* Align text to the left */
+    margin-right: 10px;
+    flex: 0 0 100px;
+    text-align: left;
 }
 
 .form-input {
-    flex: 1; /* Allow input to take remaining space */
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -59,7 +58,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 20px; /* Add margin to move the button down */
+    margin-top: 20px;
 }
 
 .form-button:hover {
@@ -73,10 +72,21 @@
     text-align: center;
     cursor: pointer;
     margin-top: 10px;
-    width: 100%; /* Make the dropzone take full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .dropzone:hover {
     background-color: #f0f8ff;
+}
+
+.image-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }

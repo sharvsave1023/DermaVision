@@ -1,42 +1,30 @@
 .home-container {
-  text-align: left; /* Align text to the left */
-  padding: 20px; /* Add some padding */
+  text-align: left; 
+  padding: 20px; 
 }
 
 h2 {
-  font-size: 2em; /* Adjust the size of the heading */
-  margin-bottom: 10px; /* Space below the heading */
+  font-size: 2em; 
+  margin-bottom: 10px; 
 }
 
 p {
-  font-size: 1.2em; /* Adjust the size of the paragraph text */
-  margin-bottom: 20px; /* Space below the paragraph */
+  font-size: 1.2em; 
+  margin-bottom: 20px; 
 }
 
 .instruction-list {
-    list-style-type: disc; /* Use bullet points */
-    padding-left: 20px; /* Indent the list */
-    margin: 10px 0; /* Add margin above and below the list */
-    /* background-color: #f9f9f9; */ /* Light background for contrast - removed */
-    /* border: 1px solid #ddd; */ /* Subtle border - removed */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Padding inside the list */
+    list-style-type: disc; 
+    padding-left: 20px; 
+    margin: 10px 0; 
+    border-radius: 5px; 
+    padding: 15px; 
 }
 
 .instruction-item {
-    font-size: 18px; /* Increase font size */
-    color: #2c3e50; /* Darker text color */
-    margin-bottom: 10px; /* Space between items */
-    line-height: 1.6; /* Improve readability */
-    position: relative; /* For custom bullet styling */
+    font-size: 18px; 
+    color: #2c3e50; 
+    margin-bottom: 10px; 
+    line-height: 1.6; 
+    position: relative; 
 }
-
-/* {{ edit_1 }} */
-.instruction-item::before {
-    /* content: "✔"; */ /* Custom bullet - removed */
-    /* color: #27ae60; */ /* Green color for the bullet - removed */
-    /* position: absolute; */ /* Positioning for the bullet - removed */
-    /* left: -20px; */ /* Adjust position - removed */
-    /* font-size: 20px; */ /* Size of the bullet - removed */
-}
-/* {{ edit_1 }} */
