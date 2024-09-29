@@ -4,8 +4,8 @@ import { useState } from 'react';
 import titleImage from './titleImage.png';
 import About from './About';
 import Contact from './Contact';
-import FormComponent from './FormComponent';
 import Home from './Home';
+import ResultsComponent from './ResultsComponent';
 
 function App() {
   const [file, setFile] = useState(null);
@@ -35,6 +35,14 @@ function App() {
     setPrediction(data);
   };
 
+  const resetForm = () => {
+    setFile(null);
+    setAge('');
+    setSex('');
+    setLocalization('');
+    setPrediction(null);
+  };
+
   return (
     <Router>
       <div className="App">
@@ -53,17 +61,21 @@ function App() {
         </header>
         <main>
           <Routes>
-            <Route path="/" element={<Home 
-              file={file} 
-              setFile={setFile} 
-              age={age} 
-              setAge={setAge} 
-              sex={sex} 
-              setSex={setSex} 
-              localization={localization} 
-              setLocalization={setLocalization} 
-              handleSubmit={handleSubmit} 
-            />} />
+            <Route path="/" element={
+              prediction ? 
+              <ResultsComponent prediction={prediction} resetForm={resetForm} /> : 
+              <Home 
+                file={file} 
+                setFile={setFile} 
+                age={age} 
+                setAge={setAge} 
+                sex={sex} 
+                setSex={setSex} 
+                localization={localization} 
+                setLocalization={setLocalization} 
+                handleSubmit={handleSubmit} 
+              />
+            } />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
