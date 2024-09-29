@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # TO DO: LOAD IN PYTORCH MODEL
-model = torch.load('.pth')
+model = torch.load('model.pth')
 model.eval()
 
 preprocess = transforms.Compose([

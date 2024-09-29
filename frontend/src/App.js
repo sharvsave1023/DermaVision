@@ -10,6 +10,7 @@ import ResultsComponent from './ResultsComponent';
 function App() {
   const [file, setFile] = useState(null);
   const [prediction, setPrediction] = useState(null);
+  const [loading, setLoading] = useState(false); 
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -17,6 +18,11 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!file) {
+        alert("Please upload an image before submitting.");
+        return; 
+    }
+    setLoading(true); 
     const formData = new FormData();
     formData.append('file', file);
 
@@ -27,6 +33,7 @@ function App() {
 
     const data = await response.json();
     setPrediction(data);
+    setLoading(false);
   };
 
   const resetForm = () => {
@@ -53,6 +60,8 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={
+              loading ? 
+              <p>Loading...</p> : // Show loading message
               prediction ? 
               <ResultsComponent prediction={prediction} resetForm={resetForm} /> : 
               <Home 
